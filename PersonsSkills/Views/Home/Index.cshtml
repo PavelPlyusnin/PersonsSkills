@@ -1,0 +1,17 @@
+﻿@model IQueryable<PersonsSkills.Models.Person>
+@{
+    ViewBag.Title = "Все пользователи";
+}
+@*<a asp-action="Create">Добавить пользователя</a>*@
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>
+                <a asp-action="Details" asp-controller="Home" asp-route-id="@item.PersonId">Подробнее</a>
+            </td>
+        </tr>
+    }
+</table>

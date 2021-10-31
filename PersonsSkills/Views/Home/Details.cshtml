@@ -1,0 +1,19 @@
+﻿@model PersonsSkills.Models.Person
+@{
+    ViewBag.Title = Model.Name;
+}
+<h2>Пользователь @Model.Name</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>Идентификатор</dt>
+        <dd>@Model.PersonId</dd>
+
+        <dt>Имя</dt>
+        <dd>@Model.DisplayName</dd>
+        @foreach (Skill skill in Model.Skills)
+        {
+            <dd>@skill.Name</dd>
+            <dd>@skill.Level</dd>
+        }
+    </dl>
+</div>
